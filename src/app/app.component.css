@@ -9,6 +9,21 @@
   padding: 30px;
 }
 
+.results {
+  padding-top: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 h1 {
   color: white;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+li {
+  font-size: 25px;
+  list-style-type: square;
 }

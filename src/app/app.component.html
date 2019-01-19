@@ -11,22 +11,32 @@
 
     <div class="field is-grouped">
       <p class="control is-expanded">
-        <input class="input is-large" type="text" placeholder="Find a repository">
+        <input class="input is-large" type="text" [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}"  placeholder="Enter search term here ...">
       </p>
 
       <p class="control">
-        <a class="button is-large is-success">
+        <button type="submit" class="button is-large is-success">
         <span class="icon">
           <i class="fas fa-search fa-lg fa-flip-horizontal"></i>
         </span>
-        </a>
+        </button>
       </p>
 
     </div>
 
   </form>
+
 </div>
 
-
+<div class="results">
+  <div class="columns" *ngFor = "let webData of webData">
+    <div class="column" >
+      <h2>{{webData.title}}</h2>
+    </div>
+    <div class="column">
+      <ul><li>{{webData.keywords}}</li></ul>
+    </div>
+  </div>
+</div>
 
 <router-outlet></router-outlet>

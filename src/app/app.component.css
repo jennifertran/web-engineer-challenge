@@ -1,0 +1,14 @@
+.header {
+  text-align: center;
+  font-size: 60px;
+  background-image: linear-gradient(to right, #1D5C92 ,	#228A67);
+  padding: 50px;
+}
+
+.searchbar {
+  padding: 30px;
+}
+
+h1 {
+  color: white;
+}

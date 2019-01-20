@@ -4,14 +4,16 @@ import { FormsModule }  from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HTMLEscapeUnescapeModule } from 'html-escape-unescape'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HTMLEscapeUnescapeModule,
     AppRoutingModule
   ],
   providers: [],

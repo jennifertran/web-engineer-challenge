@@ -10,11 +10,23 @@ import data from '../assets/data.json';
 export class AppComponent {
   title = 'Toronto Waste Lookup';
 
-  searchTerm = "";
-
+  searchTerm: string;
   webData = data;
+  result = [];
 
   find(){
-    console.log("term is " + this.searchTerm);
+    const textSearch = this.searchTerm.toString().toLowerCase(); // calculate this once
+    this.result = this.webData.filter(e =>
+      (e.title.toLowerCase().indexOf(textSearch) > 0) ||
+      (e.keywords.toLowerCase().indexOf(textSearch) > 0) ||
+      (e.body.toLowerCase().indexOf(textSearch) > 0)
+    );
+  }
+
+  // Only delete results if searchbar is empty
+  deleteResults() {
+    if(!this.searchTerm || this.searchTerm === ""){
+      this.result.length = 0;
+    }
   }
 }

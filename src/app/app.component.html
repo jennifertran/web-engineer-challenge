@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<footer class="favourites">
+<footer class="favourites" *ngIf="favourites.length > 0">
   <h2 class="favFont">
     <b>Favourites</b>
   </h2>
@@ -53,13 +53,13 @@
     <div class="column is-half" *ngIf="favourites  && favourites.title">
       <ul>
         <li><span style="font-size: 20px;">
-          <a class="fas fa-star" (click)="removeFromFav(favourites)"></a>
+          <a class="fas fa-star fav-after" (click)="removeFromFav(favourites)"></a>
         </span>
           {{favourites.title}}
         </li>
       </ul>
     </div>
-    <div class="column is-half" *ngIf="favourites  && favourites .body" >
+    <div class="column is-half" *ngIf="favourites  && favourites.body" >
       <ul><li style="list-style-type: square" [innerHTML]="favourites.body | unescape:'recursive' "></li></ul>
     </div>
   </div>

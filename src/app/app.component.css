@@ -45,7 +45,7 @@ footer {
   width: 100%;
 }
 
-.fa-star:hover{
+.fa-star:hover, .fav-after, a:after{
   color: #1A995C;
 }
 

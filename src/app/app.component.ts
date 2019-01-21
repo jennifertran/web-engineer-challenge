@@ -14,7 +14,7 @@ export class AppComponent {
   favourites = [];
 
   find(){
-    const textSearch = this.searchTerm.toString().toLowerCase(); // calculate this once
+    const textSearch = this.searchTerm.toString().toLowerCase();
     this.result = this.webData.filter(e =>
       (e.title.toLowerCase().indexOf(textSearch) > 0) ||
       (e.keywords.toLowerCase().indexOf(textSearch) > 0) ||

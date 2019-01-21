@@ -8,11 +8,10 @@ import data from '../assets/data.json';
 })
 
 export class AppComponent {
-  title = 'Toronto Waste Lookup';
-
   searchTerm: string;
   webData = data;
   result = [];
+  favourites = [];
 
   find(){
     const textSearch = this.searchTerm.toString().toLowerCase(); // calculate this once
@@ -28,5 +27,14 @@ export class AppComponent {
     if(!this.searchTerm || this.searchTerm === ""){
       this.result.length = 0;
     }
+  }
+
+  addToFav(fav){
+    this.favourites.push(fav);
+  }
+
+  removeFromFav(element) {
+    const index = this.favourites.indexOf(element);
+    this.favourites.splice(index, 1);
   }
 }

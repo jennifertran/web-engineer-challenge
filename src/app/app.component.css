@@ -1,8 +1,13 @@
 .header {
   text-align: center;
   font-size: 60px;
-  background-image: linear-gradient(to right, #1D5C92 ,	#228A67);
+  background-image: linear-gradient(to right, #1D5C92 ,	#2D8F61);
   padding: 50px;
+  color: white;
+}
+
+.button.is-success {
+  background-color: #1A995C;
 }
 
 .searchbar {
@@ -11,12 +16,9 @@
 
 .results {
   padding-top: 0;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-h1 {
-  color: white;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 30px;
 }
 
 h2 {
@@ -25,5 +27,28 @@ h2 {
 
 li {
   font-size: 25px;
-  list-style-type: square;
+}
+
+.favourites {
+  background-color: 	#F7FDF9;
+  padding: 30px;
+}
+
+.favFont {
+  font-size: 40px;
+  color: #1A995C;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.fa-star:hover{
+  color: #1A995C;
+}
+
+a {
+  color: grey;
 }

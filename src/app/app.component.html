@@ -1,7 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="header">
   <h1>
-    <b>{{ title }}</b>
+    <b>Toronto Waste Lookup</b>
   </h1>
 </div>
 
@@ -31,12 +30,39 @@
 <div class="results">
   <div class="columns" *ngFor = "let result of result">
     <div class="column is-half" *ngIf="result && result.title">
-      <h2>{{result.title}}</h2>
+      <ul>
+        <li><span style="font-size: 20px;">
+          <a class="fas fa-star" (click)="addToFav(result)"></a>
+        </span>
+        {{result.title}}
+        </li>
+      </ul>
     </div>
     <div class="column is-half" *ngIf="result && result.body" >
-      <ul><li><h2 [innerHTML]="result.body | unescape:'recursive' "></h2></li></ul>
+      <ul><li style="list-style-type: square" [innerHTML]="result.body | unescape:'recursive' "></li></ul>
     </div>
   </div>
 </div>
+
+<footer class="favourites">
+  <h2 class="favFont">
+    <b>Favourites</b>
+  </h2>
+
+  <div class="columns" *ngFor = "let favourites of favourites">
+    <div class="column is-half" *ngIf="favourites  && favourites.title">
+      <ul>
+        <li><span style="font-size: 20px;">
+          <a class="fas fa-star" (click)="removeFromFav(favourites)"></a>
+        </span>
+          {{favourites.title}}
+        </li>
+      </ul>
+    </div>
+    <div class="column is-half" *ngIf="favourites  && favourites .body" >
+      <ul><li style="list-style-type: square" [innerHTML]="favourites.body | unescape:'recursive' "></li></ul>
+    </div>
+  </div>
+</footer>
 
 <router-outlet></router-outlet>
